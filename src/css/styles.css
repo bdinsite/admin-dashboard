@@ -4,6 +4,17 @@
     box-sizing: border-box;
 }
 
+a {
+    color: #000;
+    text-decoration: none;
+    padding-left: 5px;
+}
+/* IMAGES AND ICONS */
+
+.sideIcon {
+    height: 30px;
+}
+
 .container {
     max-width: 1200px;
     height: 800px;
@@ -17,17 +28,54 @@
     ;
 }
 
+/* SIDEBAR */
 .sidebar {
     display: grid;
     grid-area: sidebar;
-    border: 2px solid blue;
+    background-image: url(../img/texture-1504364_1280.jpg);
+    grid-template: 150px 350px 300px / 1fr;
     grid-template-areas: 
-        "sideLogo sideLogo"
-        "sideUpper sideUpper"
-        "sideLower sideLower"
+        "sideLogo"
+        "sideUpper"
+        "sideLower"
     ;
 }
 
+.sideLogo {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    padding: 20px 0 0 10px;
+    height: 100px;
+}
+
+.sideUpper,
+.sideLower {
+    display: grid;
+    padding: 0 20px;
+    align-content: center;
+}
+
+.sideLinks {
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    align-items: center;
+    padding: 10px 10px;
+    background-color: rgba(247, 246, 245, 0.5);
+}
+
+.sideLogo {
+    grid-area: sideLogo;
+}
+
+.sideUpper {
+    grid-area: sideUpper;
+}
+
+.sideLower {
+    grid-area: sideLower;
+}
+
+/* TOP-BAR */
 .topBar {
     display: grid;
     grid-area: topBar;
@@ -42,19 +90,4 @@
     border: 2px solid orange;
     grid-template-columns: repeat(12, min-max(100px, 1fr));
 
-}
-
-.sideLogo {
-    border: 1px solid green;
-    grid-area: sideLogo;
-}
-
-.sideUpper {
-    border: 1px solid mediumspringgreen;
-    grid-area: sideUpper;
-}
-
-.sideLower {
-    border: 1px solid darkcyan;
-    grid-area: sideUpper;
 }
