@@ -1,0 +1,60 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1200px;
+    height: 800px;
+    display: grid;
+    border: 2px solid red;
+    grid-template: 1fr 2fr 2fr/1fr 2fr 2fr;
+    grid-template-areas: 
+        "sidebar topBar topBar"
+        "sidebar main   main"
+        "sidebar main   main"
+    ;
+}
+
+.sidebar {
+    display: grid;
+    grid-area: sidebar;
+    border: 2px solid blue;
+    grid-template-areas: 
+        "sideLogo sideLogo"
+        "sideUpper sideUpper"
+        "sideLower sideLower"
+    ;
+}
+
+.topBar {
+    display: grid;
+    grid-area: topBar;
+    border: 2px solid purple;
+    grid-template-columns: repeat(12, min-max(100px, 1fr));
+    grid-template-rows: 50px 80px;
+}
+
+.mainContent {
+    display: grid;
+    grid-area: main;
+    border: 2px solid orange;
+    grid-template-columns: repeat(12, min-max(100px, 1fr));
+
+}
+
+.sideLogo {
+    border: 1px solid green;
+    grid-area: sideLogo;
+}
+
+.sideUpper {
+    border: 1px solid mediumspringgreen;
+    grid-area: sideUpper;
+}
+
+.sideLower {
+    border: 1px solid darkcyan;
+    grid-area: sideUpper;
+}
