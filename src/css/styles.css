@@ -8,7 +8,7 @@
 }
 
 .container {
-    width: 1800px;
+    width: 2400px;
     display: grid;
     margin: 0 auto;
     background-color: #eee;
@@ -28,6 +28,7 @@ h1 {
 
 input {
     height: 30px;
+    padding-left: 20px;
     border-color: rgb(182, 118, 0);
     border-radius: 15px;
     background-color: rgb(247, 246, 245);
@@ -39,6 +40,12 @@ button {
     border-radius: 5px;
     box-shadow: 2px 2px 4px 2px rgba(167, 167, 167, 0.6);
 }
+
+button:hover {
+    background-color: orange;
+    color: #FFF;
+}
+
 
 /* IMAGES AND ICONS */
 
@@ -60,8 +67,8 @@ button {
 }
 
 .container {
-    max-width: 1400px;
-    max-height: 1000px;
+    max-width: 1600px;
+    max-height: 1600px;
     display: grid;
     grid-template: 1fr 2fr 2fr/1fr 2fr 2fr;
     grid-template-areas: 
@@ -195,7 +202,101 @@ button {
     border-top-left-radius: 55px;
     grid-area: main;
     background-color: #FFF;
-    /* border: 2px solid orange; */
-    grid-template-columns: repeat(12, min-max(100px, 1fr));
+    border-top: 4px solid orange;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 10px 10px 80px 10px;
     /* box-shadow: 0px 0px 4px 2px rgba(167, 167, 167, 0.6); */
+}
+
+.mainCards {
+    display: grid;
+    grid-column: 1/3;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.cards {
+    display: grid;
+    grid-column: 1/3;
+    align-content: start;
+}
+
+.cards h3 {
+    padding: 0 30px;
+}
+
+.projectCards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: 220px;
+    gap: 30px;
+    padding: 30px;
+}
+
+.project {
+    display: grid;
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 20px;
+    border-left: 20px solid cornflowerblue;
+    grid-row: 40px 1fr 25px;
+    box-shadow: 6px 6px 4px 0px rgba(0,0,0,0.55);
+    align-content: space-between;
+}
+
+.cardLinks {
+    height: 20px;
+    display: grid;
+    grid-template-columns: 30px 30px 30px;
+    justify-content: end;
+    align-content: center;
+}
+
+.hotTopics {
+    display: grid;
+    grid-column: 3/4;
+    align-content: space-between;
+    margin: 0 30px;
+}
+
+.announcements,
+.trending {
+    display: grid;
+    margin: 40px 10px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 6px 6px 4px 0px rgba(0,0,0,0.55);
+}
+
+.topUser {
+    display: grid;
+    grid-template-columns: 35px 1fr;
+}
+
+.contentHeader {
+    margin: 35px 0 0 15px;
+}
+
+.announce,
+.topUser {
+    padding: 10px 20px;
+}
+
+.userName {
+    margin-left: 15px;
+}
+
+h5 {
+    padding-bottom: 5px;
+}
+
+.announce h6 {
+    padding-bottom: 15px;
+    border-bottom: 1px dotted #a9a9a9;
+}
+
+.favorite:hover {
+    cursor: pointer;
 }
