@@ -42,7 +42,7 @@ button {
 }
 
 button:hover {
-    background-color: orange;
+    background-color: rgb(216, 140, 0);
     color: #FFF;
 }
 
@@ -220,7 +220,7 @@ button:hover {
     align-content: start;
 }
 
-.cards h3 {
+.cards h2 {
     padding: 0 30px;
 }
 
