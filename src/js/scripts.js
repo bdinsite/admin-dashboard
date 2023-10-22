@@ -24,9 +24,19 @@ function wordSearch() {
     
 }
 
+// ADD NEW PROJECT
+document.querySelector('.addItem').addEventListener('click', function(){
+    document.querySelector('.popup').classList.add('active');
+});
+document.querySelector('.popup .close-btn').addEventListener('click', function(){
+    document.querySelector('.popup').classList.remove('active');;
+})
+
+
+// ADD PROJECT INFORMATION
 const projectCards = document.querySelector('.projectCards');
 
-const addItem = document.querySelector('.addItem');
+const addItem = document.querySelector('.addProject');
 
 addItem.addEventListener('click', addNewProject);
 
@@ -43,13 +53,21 @@ function addNewProject() {
     favouriteStar.classList = 'miniIcon favorite';
     favouriteStar.alt = 'Favorite icon';
 
-    const siteLink = document.createElement('a');
-    siteLink.src = './src/img/link-variant.svg';
-    siteLink.class = 'miniIcon';
-
     const codeLink = document.createElement('a');
-    codeLink.src = './src/img/eye-arrow-right-outline.svg';
-    codeLink.classList = 'miniIcon';
+    codeLink.href = '#';
+
+    const codeLinkImg = document.createElement('img');
+    codeLinkImg.src = './src/img/eye-arrow-right-outline.svg';
+    codeLinkImg.classList = 'miniIcon';
+    codeLink.appendChild(codeLinkImg);
+
+    const siteLink = document.createElement('a');
+    siteLink.href = '#';
+
+    const siteLinkImg = document.createElement('img');
+    siteLinkImg.src = './src/img/link-variant.svg';
+    siteLinkImg.classList = 'miniIcon';
+    siteLink.appendChild(siteLinkImg);
 
     h4.textContent = 'New Project 1';
     p.textContent = 'A whole lot of lorem ipsum and other cool stuff.'
