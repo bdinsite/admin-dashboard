@@ -46,6 +46,10 @@ button:hover {
     color: #FFF;
 }
 
+button.addItem,
+button.editItem {
+    width: 150px;
+}
 
 /* IMAGES AND ICONS */
 
@@ -137,7 +141,7 @@ button:hover {
     padding: 10px;
     grid-area: topBar;
     grid-template-columns: 1fr;
-    grid-template-rows: 50px 80px;   
+    grid-template-rows: 100px 100px;   
 }
 
 .topUpper {
@@ -152,7 +156,8 @@ button:hover {
     display: grid;
     grid-row: 2;
     grid-column: 1;
-    grid-area: topLower;
+    grid-template-columns: repeat(2, 1fr);
+    align-content: center;
 }
 
 .topUpLeft {
@@ -185,8 +190,8 @@ button:hover {
 }
 
 .topLowLeft {
-    display: grid;
-    grid-area: topLowLeft;
+    display: inline;
+    margin-left: 50px;
 }
 
 .topLowRight {
