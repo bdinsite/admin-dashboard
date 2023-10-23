@@ -1,6 +1,6 @@
 const input = document.querySelector('input');
 
-const button = document.querySelector('button');
+const button = document.querySelector('#search');
 const cardSearch = document.querySelectorAll('.project');
 button.addEventListener('click', wordSearch);
 
@@ -25,22 +25,43 @@ function wordSearch() {
 }
 
 // ADD NEW PROJECT
-document.querySelector('.addItem').addEventListener('click', function(){
+const openForm = document.querySelector('.openForm');
+openForm.addEventListener('click', addProject);
+
+function addProject() {
     document.querySelector('.popup').classList.add('active');
-});
-document.querySelector('.popup .close-btn').addEventListener('click', function(){
-    document.querySelector('.popup').classList.remove('active');;
-})
+};
+
+const closeForm = document.querySelector('.popup .close-btn');
+closeForm.addEventListener('click', closeFormWindow);
+
+function closeFormWindow() {
+    document.querySelector('.popup').classList.remove('active');
+};
 
 
 // ADD PROJECT INFORMATION
-const projectCards = document.querySelector('.projectCards');
 
-const addItem = document.querySelector('.addProject');
+
+const addItem = document.querySelector('.form-element .addProject');
 
 addItem.addEventListener('click', addNewProject);
 
 function addNewProject() {
+    const projectCards = document.querySelector('.projectCards');
+
+
+    const projectName = document.querySelector('#projectName');
+    const description = document.querySelector('#description');
+    const projectCode = document.querySelector('#projectCode');
+    const projectLink = document.querySelector('#projectLink');
+
+    console.log(projectName.value);
+    console.log(description.value);
+    console.log(projectCode.value);
+    console.log(projectLink.value);
+
+ 
     const newProject = document.createElement('div');
     newProject.classList = 'project';
     const h4 = document.createElement('h4');
@@ -54,7 +75,7 @@ function addNewProject() {
     favouriteStar.alt = 'Favorite icon';
 
     const codeLink = document.createElement('a');
-    codeLink.href = '#';
+    codeLink.href = projectCode.value;
 
     const codeLinkImg = document.createElement('img');
     codeLinkImg.src = './src/img/eye-arrow-right-outline.svg';
@@ -62,15 +83,15 @@ function addNewProject() {
     codeLink.appendChild(codeLinkImg);
 
     const siteLink = document.createElement('a');
-    siteLink.href = '#';
+    siteLink.href = projectLink.value;
 
     const siteLinkImg = document.createElement('img');
     siteLinkImg.src = './src/img/link-variant.svg';
     siteLinkImg.classList = 'miniIcon';
     siteLink.appendChild(siteLinkImg);
 
-    h4.textContent = 'New Project 1';
-    p.textContent = 'A whole lot of lorem ipsum and other cool stuff.'
+    h4.textContent = projectName.value;
+    p.textContent = description.value;
 
     newCardLink.appendChild(favouriteStar);
     newCardLink.appendChild(codeLink);
@@ -80,5 +101,9 @@ function addNewProject() {
     newProject.appendChild(p);
     newProject.appendChild(newCardLink);
 
+    console.log(newProject);
     projectCards.appendChild(newProject);
+    console.log(projectCards);
+    console.log('clicked the button');
+    closeFormWindow();
 }
